@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PINTU TEPAT - Prototipe Demo (Data Sintetis)</title>
+<style>
+:root{
+  --ink:#1b2b2a; --muted:#4f6361; --bg:#f4f7f6; --card:#ffffff; --line:#cfdcd9;
+  --brand:#0d6b63; --brand-d:#09504a; --accent:#f0a020; --warn:#b3261e; --warn-bg:#fdecea;
+  --ok-bg:#e4f4ee; --syn:#6a3fb5;
+}
+*{box-sizing:border-box}
+html{font-size:18px}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+header{background:var(--brand);color:#fff;padding:14px 18px}
+header .row{max-width:980px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:10px;justify-content:space-between}
+h1{font-size:1.5rem;margin:0;letter-spacing:.5px}
+h1 small{display:block;font-size:.8rem;font-weight:400;opacity:.9;letter-spacing:0}
+.badge{background:var(--syn);color:#fff;padding:4px 10px;border-radius:999px;font-size:.78rem;font-weight:700}
+nav{max-width:980px;margin:0 auto;display:flex;gap:6px;flex-wrap:wrap;padding:10px 18px 0}
+nav button{font:inherit;font-size:.95rem;border:2px solid var(--brand);background:#fff;color:var(--brand-d);padding:8px 14px;border-radius:10px 10px 0 0;cursor:pointer;font-weight:600}
+nav button[aria-selected="true"]{background:var(--brand);color:#fff}
+main{max-width:980px;margin:0 auto;padding:0 18px 40px}
+.panel{background:var(--card);border:2px solid var(--brand);border-radius:0 12px 12px 12px;padding:18px}
+.safety{background:var(--warn-bg);border-left:6px solid var(--warn);padding:10px 14px;margin:14px 0;border-radius:6px;font-size:.92rem}
+.safety b{color:var(--warn)}
+h2{font-size:1.25rem;margin:.2em 0 .6em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.gbtn{font:inherit;text-align:left;background:#fff;border:2px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;min-height:84px}
+.gbtn:hover,.gbtn:focus{border-color:var(--brand);outline:none;box-shadow:0 0 0 3px rgba(13,107,99,.2)}
+.gbtn .k{font-size:.75rem;font-weight:700;color:var(--brand);letter-spacing:1px}
+.gbtn .t{font-weight:700;font-size:1.02rem}
+.gbtn .d{font-size:.85rem;color:var(--muted)}
+.q{font-size:1.2rem;font-weight:700;margin:.4em 0 .8em}
+.opts{display:flex;gap:12px;flex-wrap:wrap}
+.btn{font:inherit;font-weight:700;border:0;border-radius:10px;padding:12px 22px;cursor:pointer;background:var(--brand);color:#fff;font-size:1rem}
+.btn.alt{background:#fff;color:var(--brand-d);border:2px solid var(--brand)}
+.btn:disabled{opacity:.5;cursor:default}
+.btn:focus{outline:3px solid var(--accent)}
+.steps{font-size:.85rem;color:var(--muted);margin-bottom:6px}
+.card{border:3px dashed var(--brand);border-radius:14px;padding:16px;background:#fcfefd}
+.card .code{font-family:ui-monospace,Consolas,monospace;font-size:1.8rem;font-weight:800;color:var(--brand-d);letter-spacing:2px}
+.card dl{margin:10px 0 0;display:grid;grid-template-columns:150px 1fr;gap:6px 12px}
+.card dt{font-weight:700;color:var(--muted);font-size:.9rem}
+.card dd{margin:0}
+.door{background:var(--ok-bg);border-radius:10px;padding:10px 12px;font-weight:700}
+.syn{color:var(--syn);font-weight:700;font-size:.8rem}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th,td{border:1px solid var(--line);padding:7px 6px;text-align:center}
+th{background:#e7f1fb}
+td.hid{background:#e9e9e9;color:#777;font-size:.78rem}
+td.sh{background:#fff3d6;font-weight:700}
+td.name{text-align:left;font-weight:600}
+.note{font-size:.85rem;color:var(--muted)}
+select{font:inherit;padding:8px;border-radius:8px;border:2px solid var(--line);max-width:100%}
+label{font-weight:700;display:block;margin:10px 0 4px}
+ul.clean{padding-left:1.2em;margin:.3em 0}
+.row2{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+footer{max-width:980px;margin:0 auto;padding:0 18px 28px;font-size:.8rem;color:var(--muted)}
+@media print{
+  header,nav,.safety,.noprint,footer{display:none!important}
+  body{background:#fff}
+  .panel{border:0;padding:0}
+}
+@media (max-width:560px){ html{font-size:17px} .card dl{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<header>
+  <div class="row">
+    <h1>PINTU TEPAT<small>Kartu rujukan kendala bantuan sosial non tunai</small></h1>
+    <span class="badge">PROTOTIPE DEMO - DATA SINTETIS</span>
+  </div>
+</header>
+<nav role="tablist" aria-label="Menu">
+  <button role="tab" id="t-mulai" aria-selected="true" onclick="show('mulai')">1. Mulai</button>
+  <button role="tab" id="t-kartu" aria-selected="false" onclick="show('kartu')">2. Kartu Rujukan</button>
+  <button role="tab" id="t-papan" aria-selected="false" onclick="show('papan')">3. Papan Sinyal</button>
+  <button role="tab" id="t-tentang" aria-selected="false" onclick="show('tentang')">4. Batas dan Sumber</button>
+</nav>
+<main>
+  <div class="safety" role="note"><b>Aturan keselamatan.</b> Jangan serahkan PIN, OTP, atau kartu kepada siapa pun. Diminta bayar di luar ketentuan: Kemensos 171. Dugaan penipuan keuangan: iasc.ojk.go.id.</div>
+
+  <section class="panel" id="p-mulai">
+    <h2 id="judulMulai">Apa yang terjadi dengan kartu atau bantuan Anda?</h2>
+    <p class="note" id="catatMulai">Pilih satu. Aplikasi ini tidak meminta nama, NIK, nomor kartu, atau nomor telepon.</p>
+    <div class="grid" id="gejala"></div>
+    <div id="alur" style="display:none"></div>
+  </section>
+
+  <section class="panel" id="p-kartu" style="display:none">
+    <h2>Kartu Rujukan</h2>
+    <div id="kartuIsi"><p class="note">Belum ada kartu. Mulai dari menu 1 dan jawab pertanyaan sampai selesai.</p></div>
+  </section>
+
+  <section class="panel" id="p-papan" style="display:none">
+    <h2>Papan Sinyal (satu kecamatan contoh, minggu ini)</h2>
+    <p><span class="syn">DATA SINTETIS.</span> Papan hanya menampilkan angka bila satu sel berisi minimal 5 kasus. Sel di bawah 5 disembunyikan supaya warga di kelurahan kecil tidak bisa dikenali.</p>
+    <div style="overflow-x:auto"><table id="tbl"></table></div>
+    <div class="row2 noprint">
+      <button class="btn alt" onclick="resetData()">Reset data demo</button>
+    </div>
+    <p class="note" id="ringkas"></p>
+  </section>
+
+  <section class="panel" id="p-tentang" style="display:none">
+    <h2>Batas klaim</h2>
+    <ul class="clean">
+      <li>Ini prototipe demo. Semua angka di papan adalah data sintetis, bukan data nyata.</li>
+      <li>Aplikasi tidak memproses transaksi, tidak memeriksa saldo, dan tidak terhubung ke DTSEN, SIKS, bank, atau sistem pemerintah mana pun.</li>
+      <li>Aplikasi bukan kanal pengaduan. Ia mengarahkan ke kanal resmi: pendamping, Dinsos, bank penyalur, Kemensos 171, BI 131, dan IASC.</li>
+      <li>Tidak ada pernyataan didukung atau bermitra dengan BI, Kemensos, atau bank.</li>
+      <li>Pintu pertama selain "saldo nol" adalah usulan yang harus dikonfirmasi ke Dinsos atau bank penyalur sebelum dipakai di lapangan.</li>
+    </ul>
+    <h2>Sumber taksonomi</h2>
+    <ul class="clean">
+      <li>Deck Bank Indonesia, Materi Sosialisasi dan Edukasi Bantuan Sosial Non Tunai: tantangan penyaluran, kategori kendala, dan empat penyebab KKS saldo nol beserta penanganannya.</li>
+      <li>Kemensos: Command Center 021-171 dan aplikasi Cek Bansos.</li>
+      <li>Bank Indonesia: pengaduan sistem pembayaran lewat penyelenggara lebih dulu, lalu BI 131.</li>
+    </ul>
+    <p class="note">Taksonomi versi 0.1. Tanggal tinjauan: 1 November 2026. Data deck BI berasal dari 2021 sampai 2022 dan perlu diperbarui.</p>
+  </section>
+</main>
+<footer>PINTU TEPAT - prototipe offline untuk Tambun Bungai Ideathon 2026. Berjalan sebagai satu berkas tanpa internet.</footer>
+
+<script>
+var GEJALA = {
+  SN:{k:"SN",t:"Saldo nol",d:"Saldo di kartu kosong atau tidak masuk",
+    qs:[
+      {q:"Apakah Anda sudah memakai dana bantuan periode ini?",ya:"SN1"},
+      {q:"Apakah kartu baru diganti atau dibuat ulang?",ya:"SN4"},
+      {q:"Apakah sudah lebih dari 105 hari tidak ada transaksi, atau mungkin ada data ganda?",ya:"SN3"}
+    ], def:"SN2"},
+  PIN:{k:"PIN",t:"Lupa PIN",d:"Tidak ingat PIN kartu",qs:[],def:"PIN1"},
+  BLK:{k:"BLK",t:"Kartu terblokir",d:"Kartu tidak bisa dipakai karena diblokir",qs:[],def:"BLK1"},
+  RSK:{k:"RSK",t:"Kartu rusak atau hilang",d:"Kartu patah, tidak terbaca, atau tidak ada",
+    qs:[{q:"Apakah kartu hilang atau diduga dipakai orang lain?",ya:"RSK2"}],def:"RSK1"},
+  EDC:{k:"EDC",t:"Mesin EDC rusak",d:"Mesin di e-warong atau agen tidak berfungsi",
+    qs:[{q:"Apakah agen atau e-warong lain di sekitar juga bermasalah?",ya:"EDC2"}],def:"EDC1"},
+  SIG:{k:"SIG",t:"Sinyal buruk",d:"Transaksi gagal karena sinyal",qs:[],def:"SIG1"},
+  TIT:{k:"TIT",t:"Kartu atau PIN diminta dititipkan",d:"Ada pihak meminta kartu atau PIN Anda",qs:[],def:"TIT1"},
+  PGT:{k:"PGT",t:"Diminta bayar di luar ketentuan",d:"Ada pungutan yang tidak jelas dasarnya",qs:[],def:"PGT1"}
+};
+var SEBAB = {
+  SN1:{s:"Dana periode ini sudah terpakai.",pintu:"Tidak perlu lapor. Periksa riwayat belanja bersama petugas e-warong atau agen.",bawa:"Catatan tanggal terakhir belanja."},
+  SN2:{s:"Kemungkinan belum masuk daftar bayar periode ini.",pintu:"Pendamping, lalu Dinas Sosial untuk memeriksa daftar bayar.",bawa:"Kartu (tanpa menunjukkan PIN) dan catatan tanggal terakhir saldo masuk."},
+  SN3:{s:"Kemungkinan masuk daftar freeze atau inactive wallet (data ganda atau tidak bertransaksi lebih dari 105 hari).",pintu:"Pendamping, lalu Dinas Sosial.",bawa:"Kartu (tanpa PIN) dan perkiraan tanggal terakhir transaksi."},
+  SN4:{s:"Kemungkinan penggantian kartu belum padan dengan data penyaluran.",pintu:"Pendamping, lalu bank penyalur. Bank penyalur melapor ke Kemensos.",bawa:"Kartu baru atau bukti penggantian dari bank, tanpa PIN."},
+  PIN1:{s:"Penerima lupa PIN.",pintu:"Bank penyalur. Jangan beri PIN kepada siapa pun dan jangan minta orang lain mengganti PIN.",bawa:"Kartu dan identitas sesuai permintaan petugas bank."},
+  BLK1:{s:"Kartu diblokir (misalnya karena salah PIN berulang atau kebijakan bank).",pintu:"Bank penyalur, dengan bantuan pendamping.",bawa:"Kartu dan catatan kapan kartu mulai tidak bisa dipakai."},
+  RSK1:{s:"Kartu rusak secara fisik atau tidak terbaca.",pintu:"Bank penyalur, dengan bantuan pendamping.",bawa:"Kartu yang rusak."},
+  RSK2:{s:"Kartu hilang atau diduga disalahgunakan.",pintu:"Segera ke bank penyalur untuk menahan kartu. Beri tahu pendamping. Bila ada dana hilang, laporkan ke iasc.ojk.go.id.",bawa:"Perkiraan tanggal dan tempat terakhir kartu terlihat."},
+  EDC1:{s:"Mesin pada agen atau e-warong itu bermasalah.",pintu:"Operator e-warong atau agen, lalu bank penyalur.",bawa:"Catatan tanggal, jam, dan lokasi agen."},
+  EDC2:{s:"Gangguan lebih luas di sekitar lokasi (mesin atau jaringan).",pintu:"Pendamping dan operator e-warong. Catat agar tampil di papan sinyal.",bawa:"Catatan tanggal, jam, dan lokasi."},
+  SIG1:{s:"Sinyal tidak memadai saat transaksi.",pintu:"Catat lokasi dan jam, lalu tanyakan jadwal penyaluran ke pendamping.",bawa:"Catatan lokasi dan jam kejadian."},
+  TIT1:{s:"Risiko penyalahgunaan: kartu atau PIN diminta pihak lain.",pintu:"Jangan serahkan. Laporkan ke Kemensos 171. Bila ada dana hilang atau dugaan penipuan, laporkan ke iasc.ojk.go.id.",bawa:"Catatan apa yang diminta dan kapan, tanpa menulis nama pribadi di kartu ini."},
+  PGT1:{s:"Dugaan pungutan di luar ketentuan.",pintu:"Kemensos 171. Catat kejadian tanpa nama.",bawa:"Catatan tanggal, tempat, dan jenis pungutan."}
+};
+var KEL = ["Kelurahan Contoh A","Kelurahan Contoh B","Kelurahan Contoh C","Kelurahan Contoh D","Kelurahan Contoh E"];
+var KODE = ["SN","PIN","BLK","RSK","EDC","SIG","TIT","PGT"];
+var SEED = [
+  [7,2,3,1,6,1,0,0],
+  [5,1,2,0,1,3,1,0],
+  [2,0,1,1,0,2,0,0],
+  [9,3,4,2,5,0,2,1],
+  [1,1,0,0,2,6,0,0]
+];
+var STORE_KEY="pintu_tepat_demo_v1";
+var data=null, cur=null, jawab=[], idx=0, lastCard=null, saved=false;
+
+function load(){
+  try{ var s=localStorage.getItem(STORE_KEY); if(s){ data=JSON.parse(s); return; } }catch(e){}
+  data=JSON.parse(JSON.stringify(SEED));
+}
+function persist(){ try{ localStorage.setItem(STORE_KEY,JSON.stringify(data)); }catch(e){} }
+function resetData(){ try{ localStorage.removeItem(STORE_KEY); }catch(e){} data=JSON.parse(JSON.stringify(SEED)); renderPapan(); }
+
+function show(id){
+  ["mulai","kartu","papan","tentang"].forEach(function(n){
+    document.getElementById("p-"+n).style.display = (n===id)?"block":"none";
+    document.getElementById("t-"+n).setAttribute("aria-selected", n===id?"true":"false");
+  });
+  if(id==="papan") renderPapan();
+}
+function esc(t){ return String(t).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+
+function renderGejala(){
+  var h="";
+  KODE.forEach(function(k){ var g=GEJALA[k];
+    h+='<button class="gbtn" onclick="pilih(\''+k+'\')"><div class="k">'+g.k+'</div><div class="t">'+esc(g.t)+'</div><div class="d">'+esc(g.d)+'</div></button>';
+  });
+  document.getElementById("gejala").innerHTML=h;
+}
+function pilih(k){
+  cur=GEJALA[k]; jawab=[]; idx=0; saved=false;
+  document.getElementById("gejala").style.display="none";
+  document.getElementById("catatMulai").style.display="none";
+  document.getElementById("judulMulai").textContent="Gejala: "+cur.t;
+  tanya();
+}
+function tanya(){
+  var a=document.getElementById("alur"); a.style.display="block";
+  if(idx>=cur.qs.length){ return hasil(cur.def); }
+  var q=cur.qs[idx];
+  a.innerHTML='<div class="steps">Pertanyaan '+(idx+1)+' dari '+cur.qs.length+'</div><div class="q">'+esc(q.q)+'</div>'+
+   '<div class="opts"><button class="btn" onclick="jwb(true)">Ya</button><button class="btn alt" onclick="jwb(false)">Tidak / tidak tahu</button><button class="btn alt" onclick="ulang()">Mulai lagi</button></div>';
+}
+function jwb(ya){
+  var q=cur.qs[idx];
+  jawab.push({q:q.q,ya:ya});
+  if(ya){ return hasil(q.ya); }
+  idx++; tanya();
+}
+function ulang(){
+  cur=null; jawab=[]; idx=0;
+  document.getElementById("alur").style.display="none";
+  document.getElementById("gejala").style.display="grid";
+  document.getElementById("catatMulai").style.display="block";
+  document.getElementById("judulMulai").textContent="Apa yang terjadi dengan kartu atau bantuan Anda?";
+}
+function hasil(sid){
+  var s=SEBAB[sid];
+  var num=sid.replace(/^[A-Z]+/,"");
+  lastCard={g:cur,sid:sid,s:s,jawab:jawab.slice(),kodeG:cur.k,kodeS:num,kel:0};
+  saved=false;
+  renderKartu();
+  show("kartu");
+}
+function kode(){
+  var kc=("0"+(lastCard.kel+1)).slice(-2);
+  return lastCard.kodeG+"-"+lastCard.kodeS+"-KEL"+kc;
+}
+function renderKartu(){
+  var c=lastCard, h="";
+  if(!c){ return; }
+  var cek="";
+  if(c.jawab.length){
+    c.jawab.forEach(function(j){ cek+="<li>"+esc(j.q)+" <b>"+(j.ya?"Ya":"Tidak / tidak tahu")+"</b></li>"; });
+  } else { cek="<li>Tidak ada pertanyaan lanjutan untuk gejala ini.</li>"; }
+  var opt=""; KEL.forEach(function(n,i){ opt+='<option value="'+i+'"'+(i===c.kel?" selected":"")+'>'+esc(n)+'</option>'; });
+  h+='<div class="noprint"><label for="kel">Kelurahan tempat kejadian (contoh sintetis)</label><select id="kel" onchange="gantiKel(this.value)">'+opt+'</select></div>';
+  h+='<div class="card" id="cardprint" style="margin-top:14px">';
+  h+='<div class="syn">KARTU RUJUKAN - DATA SINTETIS</div>';
+  h+='<div class="code" id="kode">'+kode()+'</div>';
+  h+='<dl><dt>Gejala</dt><dd>'+esc(c.g.t)+'</dd>';
+  h+='<dt>Kemungkinan penyebab</dt><dd>'+esc(c.s.s)+'</dd>';
+  h+='<dt>Sudah dicek</dt><dd><ul class="clean">'+cek+'</ul></dd>';
+  h+='<dt>Pintu pertama</dt><dd><div class="door">'+esc(c.s.pintu)+'</div></dd>';
+  h+='<dt>Yang dibawa</dt><dd>'+esc(c.s.bawa)+'</dd>';
+  h+='<dt>Jangan</dt><dd>Menuliskan PIN, OTP, NIK, atau nomor kartu di kartu ini.</dd></dl>';
+  h+='</div>';
+  h+='<div class="row2 noprint">';
+  h+='<button class="btn" onclick="catat()" id="bcatat">Catat ke papan sinyal (simulasi)</button>';
+  h+='<button class="btn alt" onclick="window.print()">Cetak kartu</button>';
+  h+='<button class="btn alt" onclick="salin()">Salin teks kartu</button>';
+  h+='<button class="btn alt" onclick="baru()">Kartu baru</button></div>';
+  h+='<p class="note noprint" id="info"></p>';
+  document.getElementById("kartuIsi").innerHTML=h;
+}
+function gantiKel(v){ lastCard.kel=parseInt(v,10); saved=false; document.getElementById("kode").textContent=kode(); document.getElementById("bcatat").disabled=false; document.getElementById("info").textContent=""; }
+function catat(){
+  if(saved){ return; }
+  var gi=KODE.indexOf(lastCard.kodeG);
+  data[lastCard.kel][gi]+=1; persist(); saved=true;
+  document.getElementById("bcatat").disabled=true;
+  document.getElementById("info").textContent="Tercatat di papan sinyal demo (hanya di perangkat ini). Tidak ada data pribadi yang disimpan.";
+}
+function salin(){
+  var c=lastCard;
+  var t="KARTU RUJUKAN (DATA SINTETIS)\nKode: "+kode()+"\nGejala: "+c.g.t+"\nKemungkinan penyebab: "+c.s.s+"\nPintu pertama: "+c.s.pintu+"\nYang dibawa: "+c.s.bawa+"\nJangan menuliskan PIN, OTP, NIK, atau nomor kartu.";
+  var info=document.getElementById("info");
+  try{ navigator.clipboard.writeText(t).then(function(){info.textContent="Teks kartu disalin.";},function(){info.textContent=t;}); }
+  catch(e){ info.textContent=t; }
+}
+function baru(){ ulang(); show("mulai"); }
+
+function renderPapan(){
+  var h='<tr><th>Kelurahan</th>';
+  KODE.forEach(function(k){ h+='<th>'+k+'</th>'; });
+  h+='<th>Total tampil</th></tr>';
+  var shown=0, hidden=0;
+  data.forEach(function(row,i){
+    var tot=0; h+='<tr><td class="name">'+esc(KEL[i])+'</td>';
+    row.forEach(function(v){
+      if(v>=5){ h+='<td class="sh">'+v+'</td>'; tot+=v; shown++; }
+      else { h+='<td class="hid">&lt;5</td>'; hidden++; }
+    });
+    h+='<td>'+(tot||"-")+'</td></tr>';
+  });
+  document.getElementById("tbl").innerHTML=h;
+  document.getElementById("ringkas").textContent=shown+" sel tampil, "+hidden+" sel disembunyikan karena kurang dari 5 kasus. Kode kolom: SN saldo nol, PIN lupa PIN, BLK kartu terblokir, RSK kartu rusak atau hilang, EDC mesin rusak, SIG sinyal buruk, TIT kartu atau PIN dititipkan, PGT pungutan.";
+}
+load(); renderGejala(); renderPapan();
+</script>
+</body>
+</html>
