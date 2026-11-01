@@ -6,70 +6,91 @@
 <title>PINTU TEPAT - Prototipe Demo (Data Sintetis)</title>
 <style>
 :root{
-  --ink:#1b2b2a; --muted:#4f6361; --bg:#f4f7f6; --card:#ffffff; --line:#cfdcd9;
-  --brand:#0d6b63; --brand-d:#09504a; --accent:#f0a020; --warn:#b3261e; --warn-bg:#fdecea;
-  --ok-bg:#e4f4ee; --syn:#6a3fb5;
+  color-scheme:dark;
+  --ink:#eef4f2; --muted:#9db5b1; --bg:#0d1716; --card:#132120; --card2:#172928; --line:#27423f;
+  --brand:#0a7a76; --brand-d:#5fd4c8; --mint:#5fd4c8; --accent:#c5d92d; --focus:#c5d92d;
+  --warn:#ff9d94; --warn-bg:#2b1816; --ok-bg:#12302d; --syn:#c5d92d; --synbg:#2a3009;
+  --hid-bg:#1a2726; --hid:#7d9894; --sh-bg:#2c3510; --sh:#eef6b4; --th:#1b3330;
+  --serif:"Playfair Display","Bodoni 72","Bodoni MT",Didot,"Didot LT STD","Hoefler Text",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
 }
 *{box-sizing:border-box}
 html{font-size:18px}
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
-header{background:var(--brand);color:#fff;padding:14px 18px}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.55}
+header{border-bottom:1px solid var(--line);padding:14px 18px}
 header .row{max-width:980px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:10px;justify-content:space-between}
-h1{font-size:1.5rem;margin:0;letter-spacing:.5px}
-h1 small{display:block;font-size:.8rem;font-weight:400;opacity:.9;letter-spacing:0}
-.badge{background:var(--syn);color:#fff;padding:4px 10px;border-radius:999px;font-size:.78rem;font-weight:700}
-nav{max-width:980px;margin:0 auto;display:flex;gap:6px;flex-wrap:wrap;padding:10px 18px 0}
-nav button{font:inherit;font-size:.95rem;border:2px solid var(--brand);background:#fff;color:var(--brand-d);padding:8px 14px;border-radius:10px 10px 0 0;cursor:pointer;font-weight:600}
-nav button[aria-selected="true"]{background:var(--brand);color:#fff}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:34px;height:34px;flex:none}
+h1{font-size:1.05rem;margin:0;letter-spacing:3px;font-weight:700;color:var(--mint)}
+h1 small{display:block;font-size:.72rem;font-weight:400;color:var(--muted);letter-spacing:.3px}
+.badge{background:var(--accent);color:#1a2100;padding:4px 12px;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.5px}
+nav{max-width:980px;margin:0 auto;display:flex;gap:4px;flex-wrap:wrap;padding:14px 18px 0}
+nav button{font:inherit;font-size:.9rem;border:1px solid var(--line);background:transparent;color:var(--muted);padding:9px 16px;border-radius:999px;cursor:pointer;font-weight:600}
+nav button:hover{color:var(--ink);border-color:var(--mint)}
+nav button[aria-selected="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+nav button:focus-visible,.btn:focus-visible,.gbtn:focus-visible,select:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 main{max-width:980px;margin:0 auto;padding:0 18px 40px}
-.panel{background:var(--card);border:2px solid var(--brand);border-radius:0 12px 12px 12px;padding:18px}
-.safety{background:var(--warn-bg);border-left:6px solid var(--warn);padding:10px 14px;margin:14px 0;border-radius:6px;font-size:.92rem}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:14px}
+.safety{background:var(--warn-bg);border-left:5px solid var(--warn);padding:10px 14px;margin:14px 0 0;border-radius:8px;font-size:.9rem;color:#ffe3df}
 .safety b{color:var(--warn)}
 h2{font-size:1.25rem;margin:.2em 0 .6em}
+.hero{padding:6px 0 18px}
+.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--mint);margin:0 0 10px}
+.display{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,11vw,4.6rem);line-height:.98;letter-spacing:-1px;margin:0 0 16px;color:var(--ink)}
+.display em{color:var(--mint)}
+.lede{font-size:1.02rem;color:var(--muted);max-width:34em;margin:0}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-.gbtn{font:inherit;text-align:left;background:#fff;border:2px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;min-height:84px}
-.gbtn:hover,.gbtn:focus{border-color:var(--brand);outline:none;box-shadow:0 0 0 3px rgba(13,107,99,.2)}
-.gbtn .k{font-size:.75rem;font-weight:700;color:var(--brand);letter-spacing:1px}
+.gbtn{font:inherit;color:inherit;text-align:left;background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;min-height:84px}
+.gbtn:hover{border-color:var(--mint);background:#1b3331}
+.gbtn .k{font-size:.72rem;font-weight:700;color:var(--mint);letter-spacing:2px}
 .gbtn .t{font-weight:700;font-size:1.02rem}
 .gbtn .d{font-size:.85rem;color:var(--muted)}
-.q{font-size:1.2rem;font-weight:700;margin:.4em 0 .8em}
+.q{font-family:var(--serif);font-size:1.5rem;font-weight:400;margin:.4em 0 .9em;line-height:1.2}
 .opts{display:flex;gap:12px;flex-wrap:wrap}
-.btn{font:inherit;font-weight:700;border:0;border-radius:10px;padding:12px 22px;cursor:pointer;background:var(--brand);color:#fff;font-size:1rem}
-.btn.alt{background:#fff;color:var(--brand-d);border:2px solid var(--brand)}
-.btn:disabled{opacity:.5;cursor:default}
-.btn:focus{outline:3px solid var(--accent)}
-.steps{font-size:.85rem;color:var(--muted);margin-bottom:6px}
-.card{border:3px dashed var(--brand);border-radius:14px;padding:16px;background:#fcfefd}
-.card .code{font-family:ui-monospace,Consolas,monospace;font-size:1.8rem;font-weight:800;color:var(--brand-d);letter-spacing:2px}
-.card dl{margin:10px 0 0;display:grid;grid-template-columns:150px 1fr;gap:6px 12px}
-.card dt{font-weight:700;color:var(--muted);font-size:.9rem}
+.btn{font:inherit;font-weight:700;border:1px solid var(--brand);border-radius:10px;padding:12px 22px;cursor:pointer;background:var(--brand);color:#fff;font-size:1rem}
+.btn:hover{background:#0c8c87}
+.btn.alt{background:transparent;color:var(--mint);border:1px solid var(--mint)}
+.btn.alt:hover{background:rgba(95,212,200,.1)}
+.btn:disabled{opacity:.45;cursor:default}
+.steps{font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.card{border:2px dashed var(--mint);border-radius:16px;padding:18px;background:#0f1d1c}
+.card .code{font-family:ui-monospace,Consolas,monospace;font-size:2rem;font-weight:800;color:var(--mint);letter-spacing:3px}
+.card dl{margin:10px 0 0;display:grid;grid-template-columns:150px 1fr;gap:8px 12px}
+.card dt{font-weight:700;color:var(--muted);font-size:.88rem}
 .card dd{margin:0}
-.door{background:var(--ok-bg);border-radius:10px;padding:10px 12px;font-weight:700}
-.syn{color:var(--syn);font-weight:700;font-size:.8rem}
+.door{background:var(--ok-bg);border-left:4px solid var(--mint);border-radius:8px;padding:10px 12px;font-weight:700}
+.syn{color:var(--syn);font-weight:700;font-size:.78rem;letter-spacing:1px}
 table{border-collapse:collapse;width:100%;font-size:.88rem}
-th,td{border:1px solid var(--line);padding:7px 6px;text-align:center}
-th{background:#e7f1fb}
-td.hid{background:#e9e9e9;color:#777;font-size:.78rem}
-td.sh{background:#fff3d6;font-weight:700}
+th,td{border:1px solid var(--line);padding:8px 6px;text-align:center}
+th{background:var(--th);color:var(--mint)}
+td.hid{background:var(--hid-bg);color:var(--hid);font-size:.78rem}
+td.sh{background:var(--sh-bg);color:var(--sh);font-weight:700}
 td.name{text-align:left;font-weight:600}
 .note{font-size:.85rem;color:var(--muted)}
-select{font:inherit;padding:8px;border-radius:8px;border:2px solid var(--line);max-width:100%}
+select{font:inherit;padding:9px;border-radius:10px;border:1px solid var(--line);background:var(--card2);color:var(--ink);max-width:100%}
 label{font-weight:700;display:block;margin:10px 0 4px}
 ul.clean{padding-left:1.2em;margin:.3em 0}
+ul.clean li{margin:.25em 0}
 .row2{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 footer{max-width:980px;margin:0 auto;padding:0 18px 28px;font-size:.8rem;color:var(--muted)}
 @media print{
-  header,nav,.safety,.noprint,footer{display:none!important}
+  :root{color-scheme:light;--ink:#111;--muted:#444;--bg:#fff;--card:#fff;--card2:#fff;--line:#999;--mint:#0a5a56;--brand-d:#0a5a56;--syn:#5a2fa0;--ok-bg:#e4f4ee;--warn:#b3261e}
+  header,nav,.safety,.noprint,footer,.hero{display:none!important}
   body{background:#fff}
   .panel{border:0;padding:0}
+  .card{background:#fff}
+  .card .code{color:#0a5a56}
 }
-@media (max-width:560px){ html{font-size:17px} .card dl{grid-template-columns:1fr} }
+@media (max-width:560px){ html{font-size:17px} .card dl{grid-template-columns:1fr} .panel{padding:16px} }
 </style>
 </head>
 <body>
 <header>
   <div class="row">
-    <h1>PINTU TEPAT<small>Kartu rujukan kendala bantuan sosial non tunai</small></h1>
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="3" y="3" width="34" height="34" rx="9" fill="#132120" stroke="#5fd4c8" stroke-width="2"/><path d="M12 31V18a8 8 0 0 1 16 0v13" fill="none" stroke="#c5d92d" stroke-width="3.5" stroke-linecap="round"/><rect x="16" y="21" width="12" height="8" rx="1.5" fill="#5fd4c8" transform="rotate(-8 22 25)"/></svg>
+      <h1>PINTU TEPAT<small>Tim Polkesraya | Tambun Bungai Ideathon 2026</small></h1>
+    </div>
     <span class="badge">PROTOTIPE DEMO - DATA SINTETIS</span>
   </div>
 </header>
@@ -83,6 +104,11 @@ footer{max-width:980px;margin:0 auto;padding:0 18px 28px;font-size:.8rem;color:v
   <div class="safety" role="note"><b>Aturan keselamatan.</b> Jangan serahkan PIN, OTP, atau kartu kepada siapa pun. Diminta bayar di luar ketentuan: Kemensos 171. Dugaan penipuan keuangan: iasc.ojk.go.id.</div>
 
   <section class="panel" id="p-mulai">
+    <div class="hero" id="hero">
+      <p class="eyebrow">Subtema 2 | Bantuan sosial non tunai</p>
+      <h2 class="display">Pilih gejala.<br>Bawa kartu.<br><em>Catat pola.</em></h2>
+      <p class="lede">Bantuan sosial non tunai bermasalah? Satu kartu menunjukkan pintu yang tepat. Tanpa nama, NIK, atau nomor kartu.</p>
+    </div>
     <h2 id="judulMulai">Apa yang terjadi dengan kartu atau bantuan Anda?</h2>
     <p class="note" id="catatMulai">Pilih satu. Aplikasi ini tidak meminta nama, NIK, nomor kartu, atau nomor telepon.</p>
     <div class="grid" id="gejala"></div>
@@ -195,7 +221,7 @@ function renderGejala(){
 function pilih(k){
   cur=GEJALA[k]; jawab=[]; idx=0; saved=false;
   document.getElementById("gejala").style.display="none";
-  document.getElementById("catatMulai").style.display="none";
+  document.getElementById("catatMulai").style.display="none";document.getElementById("hero").style.display="none";
   document.getElementById("judulMulai").textContent="Gejala: "+cur.t;
   tanya();
 }
@@ -216,7 +242,7 @@ function ulang(){
   cur=null; jawab=[]; idx=0;
   document.getElementById("alur").style.display="none";
   document.getElementById("gejala").style.display="grid";
-  document.getElementById("catatMulai").style.display="block";
+  document.getElementById("catatMulai").style.display="block";document.getElementById("hero").style.display="block";
   document.getElementById("judulMulai").textContent="Apa yang terjadi dengan kartu atau bantuan Anda?";
 }
 function hasil(sid){
