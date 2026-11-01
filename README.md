@@ -17,4 +17,4 @@ Anggota: Yetti Wira Citerawati SY, S.Pd., S.Gz., M.Pd.
 
 ## Cara membuka
 
-Buka tautan GitHub Pages repositori ini di browser HP atau laptop. Tidak perlu memasang apa pun, dan alurnya berjalan tanpa internet setelah halaman termuat.
+Buka tautan GitHub Pages repositori ini pada alamat : https://polkesrayapress.github.io/pintu-tepat/ di browser HP atau laptop. Tidak perlu memasang apa pun, dan alurnya berjalan tanpa internet setelah halaman termuat.
