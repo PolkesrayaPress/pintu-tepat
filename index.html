@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0d1716">
-<meta name="description" content="PINTU TEPAT, prototipe offline panduan rujukan kendala bantuan sosial non tunai menggunakan data sintetis.">
+<meta name="description" content="PINTU TEPAT: prototipe untuk menunjukkan ke mana harus pergi saat bantuan sosial non tunai bermasalah. Datanya buatan.">
 <title>PINTU TEPAT | Panduan Rujukan Bantuan Sosial</title>
 <style>
 :root{--pine:#0c3432;--pine-deep:#082927;--jade:#17776b;--jade-bright:#42c0a8;--mint:#dff4ec;--paper:#f6f8f6;--white:#fff;--text:#19302f;--muted:#677a77;--line:#e2eae6;--amber:#f0ae49;--amber-bg:#fff7e7;--danger:#a94835;--purple:#7555ad;--radius:20px;--shadow:0 14px 38px rgba(15,50,46,.055);--ease:cubic-bezier(.2,.75,.2,1)}
@@ -324,66 +324,66 @@ body,button,select{font-family:"DM Sans",ui-sans-serif,system-ui,-apple-system,"
 </defs></svg>
 <div class="app-shell">
 <aside class="sidebar" aria-label="Navigasi aplikasi">
-  <div class="brand"><div class="brand-mark"><svg class="icon"><use href="#i-door"/></svg></div><div><div class="brand-name">PINTU TEPAT</div><div class="brand-sub">Panduan rujukan digital</div></div></div>
+  <div class="brand"><div class="brand-mark"><svg class="icon"><use href="#i-door"/></svg></div><div><div class="brand-name">PINTU TEPAT</div><div class="brand-sub">Penunjuk jalan bantuan sosial</div></div></div>
   <div class="side-label">Menu utama</div>
   <nav class="side-nav" role="tablist" aria-label="Menu aplikasi">
-    <button class="nav-btn" id="t-mulai" role="tab" aria-selected="true" aria-controls="p-mulai" tabindex="0" onclick="show('mulai')"><svg class="icon"><use href="#i-grid"/></svg>Pilih kendala <span class="nav-number">01</span></button>
+    <button class="nav-btn" id="t-mulai" role="tab" aria-selected="true" aria-controls="p-mulai" tabindex="0" onclick="show('mulai')"><svg class="icon"><use href="#i-grid"/></svg>Pilih masalah <span class="nav-number">01</span></button>
     <button class="nav-btn" id="t-kartu" role="tab" aria-selected="false" aria-controls="p-kartu" tabindex="-1" onclick="show('kartu')"><svg class="icon"><use href="#i-file"/></svg>Kartu rujukan <span class="nav-number">02</span></button>
     <button class="nav-btn" id="t-papan" role="tab" aria-selected="false" aria-controls="p-papan" tabindex="-1" onclick="show('papan')"><svg class="icon"><use href="#i-chart"/></svg>Papan sinyal <span class="nav-number">03</span></button>
     <button class="nav-btn" id="t-tentang" role="tab" aria-selected="false" aria-controls="p-tentang" tabindex="-1" onclick="show('tentang')"><svg class="icon"><use href="#i-info"/></svg>Batas &amp; sumber <span class="nav-number">04</span></button>
   </nav>
-  <div class="sidebar-bottom"><div class="side-privacy"><div class="privacy-head"><svg class="icon"><use href="#i-shield"/></svg> Privasi lebih dulu</div><p>Tidak meminta NIK, PIN, OTP, nomor kartu, maupun nomor telepon. Simulasi disimpan hanya pada perangkat ini.</p></div><div class="side-bottomline">Tim Polkesraya • Prototipe v0.1 • Offline</div></div>
+  <div class="sidebar-bottom"><div class="side-privacy"><div class="privacy-head"><svg class="icon"><use href="#i-shield"/></svg> Privasi lebih dulu</div><p>Tidak meminta NIK, PIN, OTP, nomor kartu, maupun nomor telepon. Simulasi hanya tersimpan di perangkat ini.</p></div><div class="side-bottomline">Tim Polkesraya • Prototipe v0.1 • Offline</div></div>
 </aside>
 <div class="workspace"><div class="content-wrap">
-  <div class="topbar"><div class="crumb">PINTU TEPAT <span class="slash">/</span> <strong id="breadcrumb">Pilih kendala</strong></div><div class="top-status"><span class="dot"></span> Mode demo offline</div></div>
-  <header class="hero"><div class="hero-copy"><div class="eyebrow">Bantuan sosial non tunai</div><h1>Temukan <span class="highlight">pintu yang tepat</span> untuk kendala bantuan Anda.</h1><p>Pilih gejala, jawab pertanyaan singkat, lalu dapatkan kartu rujukan menuju pihak yang relevan. Tanpa memasukkan data pribadi.</p></div><div class="hero-art" aria-hidden="true"><div class="hero-glow"></div><div class="hero-card"><div class="hc-top"><svg class="icon"><use href="#i-file"/></svg><svg class="icon"><use href="#i-check"/></svg></div><div class="hc-line"></div><div class="hc-line short"></div><div class="hc-route"><span><svg class="icon" style="width:15px;height:15px"><use href="#i-check"/></svg></span><b></b><span><svg class="icon" style="width:15px;height:15px"><use href="#i-arrow"/></svg></span></div></div><div class="hero-floating"><svg class="icon" style="width:25px;height:25px"><use href="#i-shield"/></svg></div></div></header>
-  <div class="safety-banner" role="note"><div class="safety-icon"><svg class="icon"><use href="#i-alert"/></svg></div><p><strong>Keamanan adalah prioritas.</strong> Jangan serahkan PIN, OTP, atau kartu kepada siapa pun. Jika diminta membayar di luar ketentuan, hubungi <strong>Kemensos 171</strong>. Dugaan penipuan keuangan: <a href="https://iasc.ojk.go.id/" target="_blank" rel="noopener noreferrer">iasc.ojk.go.id</a>.</p></div>
+  <div class="topbar"><div class="crumb">PINTU TEPAT <span class="slash">/</span> <strong id="breadcrumb">Pilih masalah</strong></div><div class="top-status"><span class="dot"></span> Mode demo offline</div></div>
+  <header class="hero"><div class="hero-copy"><div class="eyebrow">Bantuan sosial non tunai</div><h1>Bantuan bermasalah? Temukan <span class="highlight">pintu yang tepat</span>.</h1><p>Pilih masalah Anda dan jawab beberapa pertanyaan. Anda akan mendapat kartu yang memberi tahu harus ke mana dan membawa apa. Tanpa nama, NIK, atau nomor kartu.</p></div><div class="hero-art" aria-hidden="true"><div class="hero-glow"></div><div class="hero-card"><div class="hc-top"><svg class="icon"><use href="#i-file"/></svg><svg class="icon"><use href="#i-check"/></svg></div><div class="hc-line"></div><div class="hc-line short"></div><div class="hc-route"><span><svg class="icon" style="width:15px;height:15px"><use href="#i-check"/></svg></span><b></b><span><svg class="icon" style="width:15px;height:15px"><use href="#i-arrow"/></svg></span></div></div><div class="hero-floating"><svg class="icon" style="width:25px;height:25px"><use href="#i-shield"/></svg></div></div></header>
+  <div class="safety-banner" role="note"><div class="safety-icon"><svg class="icon"><use href="#i-alert"/></svg></div><p><strong>Jaga kartu Anda.</strong> Jangan berikan PIN, OTP, atau kartu kepada siapa pun. Kalau diminta bayar di luar aturan, hubungi <strong>Kemensos 171</strong>. Kalau menduga ada penipuan keuangan, lapor ke <a href="https://iasc.ojk.go.id/" target="_blank" rel="noopener noreferrer">iasc.ojk.go.id</a>.</p></div>
   <div class="content-grid"><main id="main-content">
     <section id="p-mulai" class="panel" role="tabpanel" aria-labelledby="t-mulai">
-      <div class="panel-heading"><div><div class="overline">Langkah 01 / Identifikasi masalah</div><h2 id="judulMulai">Apa kendala yang Anda alami?</h2><p id="catatMulai">Pilih satu kondisi yang paling sesuai. Tidak perlu memasukkan identitas.</p></div><span class="tag">8 kategori kendala</span></div>
+      <div class="panel-heading"><div><div class="overline">Langkah 1 / Pilih masalah</div><h2 id="judulMulai">Apa masalah kartu atau bantuan Anda?</h2><p id="catatMulai">Pilih satu yang paling mirip. Anda tidak perlu mengisi nama atau nomor apa pun.</p></div><span class="tag">8 pilihan</span></div>
       <div class="symptom-grid" id="gejala"></div><div id="alur" hidden></div>
     </section>
-    <section id="p-kartu" class="panel" role="tabpanel" aria-labelledby="t-kartu" hidden><div class="panel-heading"><div><div class="overline">Langkah 02 / Rujukan awal</div><h2>Kartu rujukan Anda</h2><p>Ringkasan panduan berdasarkan jawaban Anda. Ini kemungkinan, bukan hasil pemeriksaan data pemerintah atau bank.</p></div><span class="tag">Dapat dicetak</span></div><div id="kartuIsi"><div class="surface empty"><div class="empty-icon"><svg class="icon" style="width:30px;height:30px"><use href="#i-file"/></svg></div><h3>Kartu belum dibuat</h3><p>Pilih kendala dan selesaikan pertanyaan singkat untuk melihat rujukan.</p><button class="btn" onclick="show('mulai')">Pilih kendala <svg class="icon"><use href="#i-arrow"/></svg></button></div></div></section>
-    <section id="p-papan" class="panel" role="tabpanel" aria-labelledby="t-papan" hidden><div class="panel-heading"><div><div class="overline">Ringkasan simulasi / Wilayah contoh</div><h2>Papan sinyal kendala</h2><p>Gambaran kasus sintetis dalam satu kecamatan contoh, bukan pemantauan lapangan.</p></div><span class="tag">Data sintetis</span></div><div class="disclosure"><span class="syn">DATA SINTETIS.</span> Angka ditampilkan hanya bila satu sel berisi minimal 5 kasus. Sel dengan nilai kurang dari 5 disembunyikan untuk mengurangi risiko identifikasi warga, tetapi pendekatan ini tidak menghapus seluruh risiko.</div><div class="stats"><div class="surface stat"><div class="stat-title">Wilayah contoh</div><div class="stat-value">05</div><div class="stat-foot">kelurahan sintetis</div></div><div class="surface stat"><div class="stat-title">Kategori kendala</div><div class="stat-value">08</div><div class="stat-foot">jenis gejala</div></div><div class="surface stat"><div class="stat-title">Ambang tampil</div><div class="stat-value">≥5</div><div class="stat-foot">kasus per sel</div></div></div><div class="surface table-box"><div class="table-scroll"><table id="tbl" aria-label="Matriks data sintetis per kelurahan dan kategori"></table></div><div class="table-legend"><span><i class="legend-chip"></i> Nilai 5 atau lebih</span><span><i class="legend-chip h"></i> Nilai di bawah 5 disembunyikan</span></div></div><div class="surface viz-card"><div class="viz-title">Perbandingan nilai yang dapat ditampilkan</div><div class="viz-sub">Hanya penjumlahan sel bernilai 5 atau lebih, bukan total seluruh kasus.</div><div id="barChart"></div></div><div class="actions noprint"><button class="btn secondary" onclick="resetData()"><svg class="icon"><use href="#i-refresh"/></svg> Reset simulasi</button></div><p class="note" id="ringkas" aria-live="polite"></p></section>
-    <section id="p-tentang" class="panel" role="tabpanel" aria-labelledby="t-tentang" hidden><div class="panel-heading"><div><div class="overline">Transparansi / Ketentuan penggunaan</div><h2>Batas klaim &amp; sumber</h2><p>Apa yang dapat dan tidak dapat dilakukan prototipe ini.</p></div></div><div class="surface info-section"><div class="aside-label"><svg class="icon"><use href="#i-shield"/></svg> Batas fungsi dan penggunaan</div><h3>Prototipe, bukan sistem transaksi atau kanal pengaduan</h3><ul class="clean"><li>Ini prototipe demo. Semua angka di papan adalah data sintetis, bukan data nyata.</li><li>Aplikasi tidak memproses transaksi, tidak memeriksa saldo, dan tidak terhubung ke DTSEN, SIKS, bank, atau sistem pemerintah mana pun.</li><li>Aplikasi bukan kanal pengaduan. Ia mengarahkan ke kanal resmi: pendamping, Dinsos, bank penyalur, Kemensos 171, BI 131, dan IASC.</li><li>Tidak ada pernyataan didukung atau bermitra dengan BI, Kemensos, atau bank.</li><li>Pintu pertama selain "saldo nol" adalah usulan yang harus dikonfirmasi ke Dinsos atau bank penyalur sebelum dipakai di lapangan.</li></ul></div><div class="surface info-section"><div class="aside-label"><svg class="icon"><use href="#i-file"/></svg> Rujukan taksonomi</div><h3>Dasar kategori gejala</h3><ul class="clean"><li>Deck Bank Indonesia, Materi Sosialisasi dan Edukasi Bantuan Sosial Non Tunai: tantangan penyaluran, kategori kendala, dan empat penyebab KKS saldo nol beserta penanganannya.</li><li>Kemensos: Command Center 021-171 dan aplikasi Cek Bansos.</li><li>Bank Indonesia: pengaduan sistem pembayaran lewat penyelenggara lebih dulu, lalu BI 131.</li></ul></div><p class="note">Taksonomi versi 0.1. Tanggal tinjauan: 1 November 2026. Data deck BI berasal dari 2021 sampai 2022 dan perlu diperbarui.</p></section>
-  </main><aside class="aside noprint" aria-label="Informasi pendamping"><div class="surface aside-card"><div class="aside-label"><svg class="icon"><use href="#i-info"/></svg> Cara penggunaan</div><div class="how-row"><span class="step-dot">01</span><div><strong>Kenali kendala</strong><p>Pilih masalah yang sedang terjadi pada kartu atau bantuan.</p></div></div><div class="how-row"><span class="step-dot">02</span><div><strong>Jawab seperlunya</strong><p>Pertanyaan singkat membantu mengarahkan pilihan rujukan.</p></div></div><div class="how-row"><span class="step-dot">03</span><div><strong>Simpan panduan</strong><p>Salin atau cetak kartu untuk dibawa saat meminta bantuan.</p></div></div></div><div class="aside-privacy"><svg class="icon" style="width:25px;height:25px"><use href="#i-shield"/></svg><h3>Tidak perlu data pribadi</h3><p>Kartu rujukan dibuat tanpa meminta nama, NIK, PIN, OTP, nomor kartu, atau nomor telepon. Papan sinyal adalah simulasi lokal pada perangkat ini.</p></div></aside></div>
-  <footer class="footer"><span><strong>PINTU TEPAT</strong> • Prototipe offline untuk Tambun Bungai Ideathon 2026</span><span>Satu berkas HTML • Tidak perlu koneksi internet untuk fungsi utama</span></footer>
+    <section id="p-kartu" class="panel" role="tabpanel" aria-labelledby="t-kartu" hidden><div class="panel-heading"><div><div class="overline">Langkah 2 / Kartu Anda</div><h2>Kartu rujukan Anda</h2><p>Ini perkiraan dari jawaban Anda. Aplikasi ini tidak memeriksa data pemerintah atau bank, jadi hasilnya bukan kepastian.</p></div><span class="tag">Bisa dicetak</span></div><div id="kartuIsi"><div class="surface empty"><div class="empty-icon"><svg class="icon" style="width:30px;height:30px"><use href="#i-file"/></svg></div><h3>Kartu belum dibuat</h3><p>Pilih masalah dan jawab beberapa pertanyaan. Kartu Anda akan muncul di sini.</p><button class="btn" onclick="show('mulai')">Pilih masalah <svg class="icon"><use href="#i-arrow"/></svg></button></div></div></section>
+    <section id="p-papan" class="panel" role="tabpanel" aria-labelledby="t-papan" hidden><div class="panel-heading"><div><div class="overline">Langkah 3 / Untuk pendamping</div><h2>Papan sinyal</h2><p>Contoh tampilan untuk pendamping dan koordinator. Semua angkanya buatan, bukan data lapangan.</p></div><span class="tag">Data sintetis</span></div><div class="disclosure"><span class="syn">DATA SINTETIS</span> artinya data buatan untuk contoh, bukan data warga. Angka hanya tampil kalau satu kotak berisi 5 kasus atau lebih. Kotak di bawah 5 disembunyikan supaya warga lebih sulit dikenali. Cara ini mengurangi risiko, tetapi tidak menghilangkannya.</div><div class="stats"><div class="surface stat"><div class="stat-title">Wilayah contoh</div><div class="stat-value">05</div><div class="stat-foot">kelurahan</div></div><div class="surface stat"><div class="stat-title">Jenis masalah</div><div class="stat-value">08</div><div class="stat-foot">pilihan</div></div><div class="surface stat"><div class="stat-title">Batas tampil</div><div class="stat-value">≥5</div><div class="stat-foot">kasus per kotak</div></div></div><div class="surface table-box"><div class="table-scroll"><table id="tbl" aria-label="Tabel data contoh: jumlah kasus per kelurahan dan jenis masalah"></table></div><div class="table-legend"><span><i class="legend-chip"></i> 5 kasus atau lebih</span><span><i class="legend-chip h"></i> Di bawah 5, disembunyikan</span></div></div><div class="surface viz-card"><div class="viz-title">Kasus yang tampil per kelurahan</div><div class="viz-sub">Hanya menjumlah kotak yang tampil. Ini bukan total semua kasus.</div><div id="barChart"></div></div><div class="actions noprint"><button class="btn secondary" onclick="resetData()"><svg class="icon"><use href="#i-refresh"/></svg> Kembalikan data contoh</button></div><p class="note" id="ringkas" aria-live="polite"></p></section>
+    <section id="p-tentang" class="panel" role="tabpanel" aria-labelledby="t-tentang" hidden><div class="panel-heading"><div><div class="overline">Batas dan sumber</div><h2>Yang bisa dan tidak bisa dilakukan</h2><p>Baca ini sebelum memakai hasilnya di lapangan.</p></div></div><div class="surface info-section"><div class="aside-label"><svg class="icon"><use href="#i-shield"/></svg> Batasnya</div><h3>Prototipe untuk contoh, bukan aplikasi bantuan sungguhan</h3><ul class="clean"><li>Ini prototipe untuk contoh. Semua angka di papan adalah data buatan, bukan data nyata.</li><li>Aplikasi ini tidak memproses transaksi, tidak memeriksa saldo, dan tidak terhubung ke DTSEN, SIKS, bank, atau sistem pemerintah mana pun.</li><li>Aplikasi ini bukan tempat mengadu. Ia hanya menunjukkan ke mana harus pergi: pendamping, Dinas Sosial, bank penyalur, Kemensos 171, BI 131, atau IASC.</li><li>Karya ini belum bermitra dan tidak didukung BI, Kemensos, atau bank mana pun.</li><li>Untuk masalah selain "saldo nol", arah yang kami tulis masih usulan. Dinas Sosial atau bank penyalur perlu memeriksanya dulu sebelum dipakai di lapangan.</li></ul></div><div class="surface info-section"><div class="aside-label"><svg class="icon"><use href="#i-file"/></svg> Dari mana isinya</div><h3>Dasar daftar masalah dan penyebabnya</h3><ul class="clean"><li>Materi sosialisasi Bank Indonesia tentang bantuan sosial non tunai: tantangan penyaluran, jenis masalah, dan empat penyebab saldo kartu nol beserta penanganannya.</li><li>Kemensos: Command Center 021-171 dan aplikasi Cek Bansos.</li><li>Bank Indonesia: lapor dulu ke penyelenggara kartu, baru ke BI 131.</li></ul></div><p class="note">Daftar ini versi 0.1, ditinjau 1 November 2026. Materi BI-nya dari 2021 sampai 2022 dan perlu diperbarui.</p></section>
+  </main><aside class="aside noprint" aria-label="Informasi pendamping"><div class="surface aside-card"><div class="aside-label"><svg class="icon"><use href="#i-info"/></svg> Cara memakai</div><div class="how-row"><span class="step-dot">01</span><div><strong>Pilih masalahnya</strong><p>Pilih yang paling mirip dengan masalah kartu atau bantuan Anda.</p></div></div><div class="how-row"><span class="step-dot">02</span><div><strong>Jawab pertanyaannya</strong><p>Satu sampai tiga pertanyaan ya atau tidak membantu menentukan ke mana Anda harus pergi.</p></div></div><div class="how-row"><span class="step-dot">03</span><div><strong>Bawa kartunya</strong><p>Cetak atau salin kartunya, lalu bawa saat meminta bantuan.</p></div></div></div><div class="aside-privacy"><svg class="icon" style="width:25px;height:25px"><use href="#i-shield"/></svg><h3>Tidak perlu data pribadi</h3><p>Kartu dibuat tanpa nama, NIK, PIN, OTP, nomor kartu, atau nomor telepon. Papan sinyal hanya contoh yang tersimpan di perangkat ini.</p></div></aside></div>
+  <footer class="footer"><span><strong>PINTU TEPAT</strong> • Prototipe offline untuk Tambun Bungai Ideathon 2026</span><span>Satu berkas • Fungsi utamanya jalan tanpa internet</span></footer>
 </div></div></div>
 <script>
 'use strict';
 
 // Data klasifikasi dan simulasi dipertahankan dari dokumen asli.
 var GEJALA = {
-  SN:{k:"SN",t:"Saldo nol",d:"Saldo di kartu kosong atau tidak masuk",
+  SN:{k:"SN",t:"Saldo nol",d:"Saldo kartu kosong atau bantuan tidak masuk",
     qs:[
       {q:"Apakah Anda sudah memakai dana bantuan periode ini?",ya:"SN1"},
-      {q:"Apakah kartu baru diganti atau dibuat ulang?",ya:"SN4"},
-      {q:"Apakah sudah lebih dari 105 hari tidak ada transaksi, atau mungkin ada data ganda?",ya:"SN3"}
+      {q:"Apakah kartu Anda baru diganti atau dibuat ulang?",ya:"SN4"},
+      {q:"Apakah kartu tidak dipakai belanja lebih dari 105 hari, atau mungkin datanya ganda?",ya:"SN3"}
     ], def:"SN2"},
   PIN:{k:"PIN",t:"Lupa PIN",d:"Tidak ingat PIN kartu",qs:[],def:"PIN1"},
   BLK:{k:"BLK",t:"Kartu terblokir",d:"Kartu tidak bisa dipakai karena diblokir",qs:[],def:"BLK1"},
-  RSK:{k:"RSK",t:"Kartu rusak atau hilang",d:"Kartu patah, tidak terbaca, atau tidak ada",
+  RSK:{k:"RSK",t:"Kartu rusak atau hilang",d:"Kartu patah, tidak terbaca, atau hilang",
     qs:[{q:"Apakah kartu hilang atau diduga dipakai orang lain?",ya:"RSK2"}],def:"RSK1"},
-  EDC:{k:"EDC",t:"Mesin EDC rusak",d:"Mesin di e-warong atau agen tidak berfungsi",
+  EDC:{k:"EDC",t:"Mesin kartu (EDC) rusak",d:"Mesin gesek di e-warong atau agen tidak berfungsi",
     qs:[{q:"Apakah agen atau e-warong lain di sekitar juga bermasalah?",ya:"EDC2"}],def:"EDC1"},
-  SIG:{k:"SIG",t:"Sinyal buruk",d:"Transaksi gagal karena sinyal",qs:[],def:"SIG1"},
-  TIT:{k:"TIT",t:"Kartu atau PIN diminta dititipkan",d:"Ada pihak meminta kartu atau PIN Anda",qs:[],def:"TIT1"},
-  PGT:{k:"PGT",t:"Diminta bayar di luar ketentuan",d:"Ada pungutan yang tidak jelas dasarnya",qs:[],def:"PGT1"}
+  SIG:{k:"SIG",t:"Sinyal buruk",d:"Belanja gagal karena sinyal lemah",qs:[],def:"SIG1"},
+  TIT:{k:"TIT",t:"Kartu atau PIN diminta dititipkan",d:"Ada orang meminta kartu atau PIN Anda",qs:[],def:"TIT1"},
+  PGT:{k:"PGT",t:"Diminta bayar di luar ketentuan",d:"Ada pungutan yang tidak jelas aturannya",qs:[],def:"PGT1"}
 };
 var SEBAB = {
   SN1:{s:"Dana periode ini sudah terpakai.",pintu:"Tidak perlu lapor. Periksa riwayat belanja bersama petugas e-warong atau agen.",bawa:"Catatan tanggal terakhir belanja."},
-  SN2:{s:"Kemungkinan belum masuk daftar bayar periode ini.",pintu:"Pendamping, lalu Dinas Sosial untuk memeriksa daftar bayar.",bawa:"Kartu (tanpa menunjukkan PIN) dan catatan tanggal terakhir saldo masuk."},
-  SN3:{s:"Kemungkinan masuk daftar freeze atau inactive wallet (data ganda atau tidak bertransaksi lebih dari 105 hari).",pintu:"Pendamping, lalu Dinas Sosial.",bawa:"Kartu (tanpa PIN) dan perkiraan tanggal terakhir transaksi."},
-  SN4:{s:"Kemungkinan penggantian kartu belum padan dengan data penyaluran.",pintu:"Pendamping, lalu bank penyalur. Bank penyalur melapor ke Kemensos.",bawa:"Kartu baru atau bukti penggantian dari bank, tanpa PIN."},
-  PIN1:{s:"Penerima lupa PIN.",pintu:"Bank penyalur. Jangan beri PIN kepada siapa pun dan jangan minta orang lain mengganti PIN.",bawa:"Kartu dan identitas sesuai permintaan petugas bank."},
-  BLK1:{s:"Kartu diblokir (misalnya karena salah PIN berulang atau kebijakan bank).",pintu:"Bank penyalur, dengan bantuan pendamping.",bawa:"Kartu dan catatan kapan kartu mulai tidak bisa dipakai."},
-  RSK1:{s:"Kartu rusak secara fisik atau tidak terbaca.",pintu:"Bank penyalur, dengan bantuan pendamping.",bawa:"Kartu yang rusak."},
-  RSK2:{s:"Kartu hilang atau diduga disalahgunakan.",pintu:"Segera ke bank penyalur untuk menahan kartu. Beri tahu pendamping. Bila ada dana hilang, laporkan ke iasc.ojk.go.id.",bawa:"Perkiraan tanggal dan tempat terakhir kartu terlihat."},
-  EDC1:{s:"Mesin pada agen atau e-warong itu bermasalah.",pintu:"Operator e-warong atau agen, lalu bank penyalur.",bawa:"Catatan tanggal, jam, dan lokasi agen."},
-  EDC2:{s:"Gangguan lebih luas di sekitar lokasi (mesin atau jaringan).",pintu:"Pendamping dan operator e-warong. Catat agar tampil di papan sinyal.",bawa:"Catatan tanggal, jam, dan lokasi."},
-  SIG1:{s:"Sinyal tidak memadai saat transaksi.",pintu:"Catat lokasi dan jam, lalu tanyakan jadwal penyaluran ke pendamping.",bawa:"Catatan lokasi dan jam kejadian."},
-  TIT1:{s:"Risiko penyalahgunaan: kartu atau PIN diminta pihak lain.",pintu:"Jangan serahkan. Laporkan ke Kemensos 171. Bila ada dana hilang atau dugaan penipuan, laporkan ke iasc.ojk.go.id.",bawa:"Catatan apa yang diminta dan kapan, tanpa menulis nama pribadi di kartu ini."},
-  PGT1:{s:"Dugaan pungutan di luar ketentuan.",pintu:"Kemensos 171. Catat kejadian tanpa nama.",bawa:"Catatan tanggal, tempat, dan jenis pungutan."}
+  SN2:{s:"Kemungkinan belum masuk daftar bayar periode ini.",pintu:"Pendamping, lalu Dinas Sosial untuk memeriksa daftar bayar.",bawa:"Kartu (jangan tunjukkan PIN) dan catatan tanggal terakhir saldo masuk."},
+  SN3:{s:"Kemungkinan kartu dibekukan (disebut daftar freeze atau inactive wallet): datanya ganda, atau tidak dipakai belanja lebih dari 105 hari.",pintu:"Pendamping, lalu Dinas Sosial.",bawa:"Kartu (tanpa PIN) dan perkiraan tanggal terakhir transaksi."},
+  SN4:{s:"Kemungkinan kartu pengganti belum cocok dengan data penyaluran.",pintu:"Pendamping, lalu bank penyalur. Bank penyalur melapor ke Kemensos.",bawa:"Kartu baru atau bukti penggantian dari bank (tanpa PIN)."},
+  PIN1:{s:"Anda lupa PIN.",pintu:"Bank penyalur. Jangan beri tahu PIN kepada siapa pun, dan jangan minta orang lain mengganti PIN.",bawa:"Kartu dan identitas sesuai permintaan petugas bank."},
+  BLK1:{s:"Kartu diblokir, misalnya karena salah PIN berulang kali atau aturan bank.",pintu:"Bank penyalur, dengan bantuan pendamping.",bawa:"Kartu dan catatan kapan kartu mulai tidak bisa dipakai."},
+  RSK1:{s:"Kartu rusak atau tidak terbaca.",pintu:"Bank penyalur, dengan bantuan pendamping.",bawa:"Kartu yang rusak."},
+  RSK2:{s:"Kartu hilang atau mungkin dipakai orang lain.",pintu:"Segera ke bank penyalur untuk menahan kartu. Beri tahu pendamping. Kalau ada dana hilang, lapor ke iasc.ojk.go.id.",bawa:"Perkiraan tanggal dan tempat terakhir kartu terlihat."},
+  EDC1:{s:"Mesin di agen atau e-warong itu bermasalah.",pintu:"Operator e-warong atau agen, lalu bank penyalur.",bawa:"Catatan tanggal, jam, dan lokasi agen."},
+  EDC2:{s:"Gangguan lebih luas di sekitar sini, bisa pada mesin atau jaringan.",pintu:"Pendamping dan operator e-warong. Catat kejadiannya supaya tampil di papan sinyal.",bawa:"Catatan tanggal, jam, dan lokasi."},
+  SIG1:{s:"Sinyal terlalu lemah saat belanja.",pintu:"Catat lokasi dan jam, lalu tanyakan jadwal penyaluran ke pendamping.",bawa:"Catatan lokasi dan jam kejadian."},
+  TIT1:{s:"Berbahaya: kartu atau PIN Anda diminta orang lain.",pintu:"Jangan serahkan. Lapor ke Kemensos 171. Kalau dana hilang atau Anda menduga ada penipuan, lapor juga ke iasc.ojk.go.id.",bawa:"Catatan apa yang diminta dan kapan. Jangan tulis nama orang di kartu ini."},
+  PGT1:{s:"Ada dugaan pungutan di luar aturan.",pintu:"Kemensos 171. Catat kejadiannya tanpa menulis nama.",bawa:"Catatan tanggal, tempat, dan jenis pungutan."}
 };
 var KEL = ["Kelurahan Contoh A","Kelurahan Contoh B","Kelurahan Contoh C","Kelurahan Contoh D","Kelurahan Contoh E"];
 var KODE = ["SN","PIN","BLK","RSK","EDC","SIG","TIT","PGT"];
@@ -397,7 +397,7 @@ var SEED = [
 var STORE_KEY="pintu_tepat_demo_v1";
 var data=null, cur=null, jawab=[], idx=0, lastCard=null, saved=false;
 
-const NAV_NAMES={mulai:'Pilih kendala',kartu:'Kartu rujukan',papan:'Papan sinyal',tentang:'Batas & sumber'};
+const NAV_NAMES={mulai:'Pilih masalah',kartu:'Kartu rujukan',papan:'Papan sinyal',tentang:'Batas & sumber'};
 const GEJALA_ICONS={SN:'wallet',PIN:'key',BLK:'lock',RSK:'credit',EDC:'monitor',SIG:'wifi',TIT:'hand',PGT:'receipt'};
 const svg=(name,attr='')=>'<svg class="icon" '+attr+' aria-hidden="true"><use href="#i-'+name+'"></use></svg>';
 function load(){
@@ -438,14 +438,14 @@ function pilih(k){
   cur=GEJALA[k];jawab=[];idx=0;saved=false;
   document.getElementById('gejala').hidden=true;
   document.getElementById('catatMulai').hidden=true;
-  document.getElementById('judulMulai').textContent='Kendala: '+cur.t;syncHero();
+  document.getElementById('judulMulai').textContent='Masalah: '+cur.t;syncHero();
   tanya();
 }
 function tanya(){
   const a=document.getElementById('alur');a.hidden=false;
   if(idx>=cur.qs.length){hasil(cur.def);return;}
   const q=cur.qs[idx];const step=idx+1;const total=cur.qs.length;
-  a.innerHTML=`<div class="surface question-card"><div class="progress-top"><span>Pertanyaan ${step} dari ${total}</span><span>${Math.round((step-1)/total*100)}% sebelum jawaban</span></div><div class="progress-track" aria-label="Progres pertanyaan"><div class="progress-bar" style="width:${Math.round((step-1)/total*100)}%"></div></div><div class="question">${esc(q.q)}</div><p class="question-sub">Pilih jawaban yang paling sesuai dengan kondisi Anda.</p><div class="actions"><button class="btn" onclick="jwb(true)">${svg('check')} Ya</button><button class="btn secondary" onclick="jwb(false)">Tidak / tidak tahu</button><button class="btn tertiary" onclick="ulang()">Mulai lagi</button></div></div>`;
+  a.innerHTML=`<div class="surface question-card"><div class="progress-top"><span>Pertanyaan ${step} dari ${total}</span><span>Jawab ya atau tidak</span></div><div class="progress-track" aria-label="Kemajuan pertanyaan"><div class="progress-bar" style="width:${Math.round((step-1)/total*100)}%"></div></div><div class="question">${esc(q.q)}</div><p class="question-sub">Pilih jawaban yang paling sesuai. Kalau ragu, pilih Tidak / tidak tahu.</p><div class="actions"><button class="btn" onclick="jwb(true)">${svg('check')} Ya</button><button class="btn secondary" onclick="jwb(false)">Tidak / tidak tahu</button><button class="btn tertiary" onclick="ulang()">Mulai lagi</button></div></div>`;
 }
 function jwb(yes){
   if(!cur||idx>=cur.qs.length)return;
@@ -459,7 +459,7 @@ function ulang(){
   document.getElementById('alur').innerHTML='';
   document.getElementById('gejala').hidden=false;
   document.getElementById('catatMulai').hidden=false;
-  document.getElementById('judulMulai').textContent='Apa kendala yang Anda alami?';syncHero();
+  document.getElementById('judulMulai').textContent='Apa masalah kartu atau bantuan Anda?';syncHero();
 }
 function hasil(sid){
   const s=SEBAB[sid];if(!s)return;
@@ -471,19 +471,19 @@ function kode(){return lastCard.kodeG+'-'+lastCard.kodeS+'-KEL'+('0'+(lastCard.k
 function renderKartu(){
   const c=lastCard;
   if(!c)return;
-  const cek=c.jawab.length?c.jawab.map(j=>`<li>${esc(j.q)} <strong>${j.ya?'Ya':'Tidak / tidak tahu'}</strong></li>`).join(''):'<li>Tidak ada pertanyaan lanjutan untuk gejala ini.</li>';
+  const cek=c.jawab.length?c.jawab.map(j=>`<li>${esc(j.q)} <strong>${j.ya?'Ya':'Tidak / tidak tahu'}</strong></li>`).join(''):'<li>Tidak ada pertanyaan tambahan untuk masalah ini.</li>';
   const opts=KEL.map((n,i)=>`<option value="${i}" ${i===c.kel?'selected':''}>${esc(n)}</option>`).join('');
   document.getElementById('kartuIsi').innerHTML=`
-    <div class="surface selector-wrap noprint"><div><label for="kel">Kelurahan tempat kejadian (contoh sintetis)</label><p>Memengaruhi kode kartu dan pencatatan simulasi.</p></div><select id="kel" onchange="gantiKel(this.value)">${opts}</select></div>
-    <article class="referral" id="cardprint" aria-label="Kartu rujukan sintetis">
-      <div class="referral-top"><div class="referral-kicker">${svg('file')} Kartu rujukan • Data sintetis</div><div class="code" id="kode">${kode()}</div><div class="hint">Kode kategori dan kelurahan contoh, bukan nomor identitas atau nomor laporan resmi.</div></div>
+    <div class="surface selector-wrap noprint"><div><label for="kel">Kelurahan tempat kejadian (contoh)</label><p>Ini menentukan kode kartu dan catatan di papan contoh.</p></div><select id="kel" onchange="gantiKel(this.value)">${opts}</select></div>
+    <article class="referral" id="cardprint" aria-label="Kartu rujukan contoh">
+      <div class="referral-top"><div class="referral-kicker">${svg('file')} Kartu rujukan • Data sintetis</div><div class="code" id="kode">${kode()}</div><div class="hint">Kode ini hanya menunjukkan jenis masalah dan kelurahan contoh. Ini bukan nomor identitas atau nomor laporan resmi.</div></div>
       <div class="referral-body">
-        <div class="referral-item"><div class="key">Gejala</div><div class="value"><strong>${esc(c.g.t)}</strong></div></div>
+        <div class="referral-item"><div class="key">Masalah</div><div class="value"><strong>${esc(c.g.t)}</strong></div></div>
         <div class="referral-item"><div class="key">Kemungkinan penyebab</div><div class="value">${esc(c.s.s)}</div></div>
         <div class="referral-item"><div class="key">Sudah dicek</div><div class="value"><ul>${cek}</ul></div></div>
-        <div class="referral-item"><div class="key">Pintu pertama</div><div class="value"><div class="destination">${esc(c.s.pintu)}</div></div></div>
+        <div class="referral-item"><div class="key">Datangi dulu (pintu pertama)</div><div class="value"><div class="destination">${esc(c.s.pintu)}</div></div></div>
         <div class="referral-item"><div class="key">Yang dibawa</div><div class="value">${esc(c.s.bawa)}</div></div>
-        <div class="referral-item"><div class="key">Jangan</div><div class="value protect">Menuliskan PIN, OTP, NIK, atau nomor kartu pada kartu ini.</div></div>
+        <div class="referral-item"><div class="key">Ingat</div><div class="value protect">Jangan tulis PIN, OTP, NIK, atau nomor kartu di kartu ini.</div></div>
       </div>
     </article>
     <div class="actions noprint"><button class="btn" onclick="catat()" id="bcatat">${svg('chart')} Catat ke papan (simulasi)</button><button class="btn secondary" onclick="window.print()">${svg('printer')} Cetak</button><button class="btn secondary" onclick="salin()">${svg('copy')} Salin teks</button><button class="btn tertiary" onclick="baru()">${svg('refresh')} Kartu baru</button></div>
@@ -503,12 +503,12 @@ function catat(){
   const gi=KODE.indexOf(lastCard.kodeG);if(gi<0)return;
   data[lastCard.kel][gi]+=1;persist();saved=true;
   document.getElementById('bcatat').disabled=true;
-  document.getElementById('info').textContent='Tercatat di papan sinyal demo pada perangkat ini. Tidak ada data pribadi yang disimpan.';
+  document.getElementById('info').textContent='Tercatat di papan contoh di perangkat ini. Tidak ada data pribadi yang disimpan.';
 }
 async function salin(){
   if(!lastCard)return;
   const c=lastCard;
-  const t='KARTU RUJUKAN (DATA SINTETIS)\nKode: '+kode()+'\nGejala: '+c.g.t+'\nKemungkinan penyebab: '+c.s.s+'\nPintu pertama: '+c.s.pintu+'\nYang dibawa: '+c.s.bawa+'\nJangan menuliskan PIN, OTP, NIK, atau nomor kartu.';
+  const t='KARTU RUJUKAN (DATA SINTETIS)\nKode: '+kode()+'\nMasalah: '+c.g.t+'\nKemungkinan penyebab: '+c.s.s+'\nDatangi dulu: '+c.s.pintu+'\nYang dibawa: '+c.s.bawa+'\nJangan tulis PIN, OTP, NIK, atau nomor kartu.';
   const info=document.getElementById('info');
   try{
     if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(t);}
@@ -535,9 +535,9 @@ function renderPapan(){
   });
   h+='</tbody>';
   document.getElementById('tbl').innerHTML=h;
-  document.getElementById('ringkas').textContent=shown+' sel ditampilkan, '+hidden+' sel disembunyikan (kurang dari 5). Kode: SN saldo nol, PIN lupa PIN, BLK kartu terblokir, RSK kartu rusak atau hilang, EDC mesin rusak, SIG sinyal buruk, TIT kartu atau PIN diminta dititipkan, PGT pungutan.';
+  document.getElementById('ringkas').textContent=shown+' kotak tampil, '+hidden+' disembunyikan (di bawah 5). Kode: SN saldo nol, PIN lupa PIN, BLK kartu terblokir, RSK kartu rusak atau hilang, EDC mesin kartu rusak, SIG sinyal buruk, TIT kartu atau PIN diminta dititipkan, PGT pungutan.';
   const max=Math.max(1,...totals);
-  document.getElementById('barChart').innerHTML=totals.map((v,i)=>`<div class="bar-row"><span>${esc(KEL[i].replace('Kelurahan Contoh ','Kelurahan '))}</span><div class="bar-track" role="img" aria-label="${esc(KEL[i])}, ${v} dari sel yang ditampilkan"><div class="bar-fill" style="width:${Math.round(v/max*100)}%"></div></div><span class="bar-value">${v||'-'}</span></div>`).join('');
+  document.getElementById('barChart').innerHTML=totals.map((v,i)=>`<div class="bar-row"><span>${esc(KEL[i].replace('Kelurahan Contoh ','Kelurahan '))}</span><div class="bar-track" role="img" aria-label="${esc(KEL[i])}, ${v} kasus yang tampil"><div class="bar-fill" style="width:${Math.round(v/max*100)}%"></div></div><span class="bar-value">${v||'-'}</span></div>`).join('');
 }
 // Navigasi papan ketik mendukung ArrowLeft dan ArrowRight pada tab.
 document.querySelector('.side-nav').addEventListener('keydown',e=>{
